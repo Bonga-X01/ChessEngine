@@ -1,7 +1,23 @@
-package chess;
+package chess.engine.board;
+
+import chess.engile.pieces.Piece;
+import com.google.common.collect.ImmutableMap;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Tile {
-    int tileCoordinates;
+    protected final int tileCoordinates;
+    private static final Map<Integer, EmptyTile> EMPTY_TILES = createPossiblyEmptyTiles();
+
+    private static Map<Integer, EmptyTile> createPossiblyEmptyTiles() {
+        final Map<Integer, EmptyTile> emptyTiles = new HashMap<>();
+        for (int i = 0; i < 64; i++) {
+            emptyTiles.put(i, new EmptyTile(i));
+        }
+        return ImmutableMap.copyOf(emptyTiles);
+    }
+
     Tile(int tileCoordinates) {
         this.tileCoordinates = tileCoordinates;
     }
@@ -9,7 +25,7 @@ public abstract class Tile {
     public abstract Piece getPiece();
 
     public static final class EmptyTile extends Tile {
-        EmptyTile(int coordinate) {
+        EmptyTile(final int coordinate) {
             super(coordinate);
         }
 
@@ -24,7 +40,7 @@ public abstract class Tile {
         }
     }
     public static final class OccupiedTile extends Tile {
-        Piece pieceOnTile;
+        private final Piece pieceOnTile;
         OccupiedTile(int coordinate, Piece pieceOnTile) {
             super(coordinate);
             this.pieceOnTile = pieceOnTile;
