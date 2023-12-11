@@ -18,8 +18,12 @@ public abstract class Tile {
         return ImmutableMap.copyOf(emptyTiles);
     }
 
-    Tile(int tileCoordinates) {
+    private Tile(int tileCoordinates) {
         this.tileCoordinates = tileCoordinates;
+    }
+
+    public static Tile createTile(final int tileCoordinates, final Piece piece) {
+        return piece != null ? new EmptyTile(tileCoordinates) : EMPTY_TILES.get(tileCoordinates);
     }
     public abstract boolean isTileOccupied();
     public abstract Piece getPiece();
