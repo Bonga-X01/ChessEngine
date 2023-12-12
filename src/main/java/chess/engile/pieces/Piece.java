@@ -11,6 +11,14 @@ public abstract class Piece {
     protected final int piecePosition;
     protected final Alliance pieceAlliance;
 
+    public int getPiecePosition() {
+        return piecePosition;
+    }
+
+    public Alliance getPieceAlliance() {
+        return pieceAlliance;
+    }
+
     Piece(final int piecePosition, final Alliance pieceAlliance) {
         this.piecePosition = piecePosition;
         this.pieceAlliance = pieceAlliance;
