@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="36c595a5-990c-481d-bda3-8bd5c4372859" name="Changes" comment="Adding Guava library for immutable map">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/chess/engine/board/Tile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/chess/engine/board/Tile.java" afterDir="false" />
-    </list>
+    <list default="true" id="36c595a5-990c-481d-bda3-8bd5c4372859" name="Changes" comment="Tile static factory method" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -111,7 +108,14 @@
       <option name="project" value="LOCAL" />
       <updated>1702322172096</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Tile static factory method">
+      <created>1702322805185</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702322805185</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -119,6 +123,7 @@
     <MESSAGE value="Piece class" />
     <MESSAGE value="Merged Piece" />
     <MESSAGE value="Adding Guava library for immutable map" />
-    <option name="LAST_COMMIT_MESSAGE" value="Adding Guava library for immutable map" />
+    <MESSAGE value="Tile static factory method" />
+    <option name="LAST_COMMIT_MESSAGE" value="Tile static factory method" />
   </component>
 </project>
