@@ -2,10 +2,10 @@ package chess.engile.pieces;
 
 import chess.Alliance;
 import chess.engine.board.Board;
+import chess.engine.board.BoardUtils;
 import chess.engine.board.Move;
 import chess.engine.board.Tile;
 import com.google.common.collect.ImmutableList;
-import org.checkerframework.checker.units.qual.A;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +25,10 @@ public class Knight extends Piece{
 
         for(final int candidateMove : CANDIDATE_MOVE_COORDINATES) {
             candidateDestinationCoordinate = this.piecePosition + candidateMove;
-            if( true /*isValidTileCoordinate*/) {
+            if(BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
+                if(isFirstColumnExclusion(this.piecePosition, candidateMove)) {
+                    continue;
+                }
                 final Tile candidateDestinationTile = board.getTile(candidateDestinationCoordinate);
                 if(!candidateDestinationTile.isTileOccupied()) {
                     legalMoves.add(new Move());
@@ -42,4 +45,19 @@ public class Knight extends Piece{
 
         return ImmutableList.copyOf(legalMoves);
     }
+
+    /**
+     * This method determines whether the current candidateOffset leads to a valid move provided that the Knight is in the
+     * first column
+     *
+     * @param currentPosition
+     * @param candidateOffset
+     * @return true if the candidateOffset leads to an invalid move
+     * @return false if the candidateOffset leads to a valid move
+     */
+    private static boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset) {
+        return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -17) || (candidateOffset == -10)
+                || (candidateOffset == 6) || (candidateOffset == 15);
+    }
+
 }
