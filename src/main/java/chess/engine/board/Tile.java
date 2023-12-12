@@ -17,7 +17,7 @@ public abstract class Tile {
      */
     private static Map<Integer, EmptyTile> createPossiblyEmptyTiles() {
         final Map<Integer, EmptyTile> emptyTiles = new HashMap<>();
-        for (int i = 0; i < 64; i++) {
+        for (int i = 0; i < BoardUtils.NUM_TILES; i++) {
             emptyTiles.put(i, new EmptyTile(i));
         }
 
