@@ -1,5 +1,5 @@
 package chess.engile.pieces;
 
-public class Move {
+public class Knight {
 
 }

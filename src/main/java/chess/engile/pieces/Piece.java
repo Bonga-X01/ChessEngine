@@ -1,5 +1,9 @@
 package chess.engile.pieces;
 
+import chess.Alliance;
+import chess.engine.board.Board;
+import chess.engine.board.Move;
+
 import java.util.List;
 
 public abstract class Piece {
