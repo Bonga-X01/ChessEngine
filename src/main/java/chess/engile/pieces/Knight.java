@@ -57,8 +57,7 @@ public class Knight extends Piece{
      *
      * @param currentPosition - represents the current position of the Knight
      * @param candidateOffset - represents the offset
-     * @return true if the candidateOffset leads to an invalid move
-     * @return false if the candidateOffset leads to a valid move
+     * @return true if the candidateOffset leads to an invalid move, false if the candidateOffset leads to a valid move
      */
     private static boolean isFirstColumnExclusion(final int currentPosition, final int candidateOffset) {
         return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -17 || candidateOffset == -10
