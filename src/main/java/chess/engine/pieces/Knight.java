@@ -13,7 +13,7 @@ import java.util.Collection;
 import java.util.List;
 
 public class Knight extends Piece{
-    private final static int[] CANDIDATE_MOVE_COORDINATES = {-17, -15, -10, -6, 6, 10, 15, 17};//offsets w.r.t current position
+    private final static int[] CANDIDATE_MOVE_COORDINATES = {-17, -15, -10, -6, 6, 10, 15, 17 };//offsets w.r.t current position
     Knight (final int piecePosition, final Alliance pieceAlliance) {
         super(piecePosition, pieceAlliance);
     }
@@ -40,7 +40,6 @@ public class Knight extends Piece{
                 } else {
                     final Piece pieceAtDestination = candidateDestinationTile.getPiece();
                     final Alliance pieceAlliance = pieceAtDestination.getPieceAlliance();
-
                     if(this.pieceAlliance != pieceAlliance){
                         legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinate, pieceAtDestination));
                     }

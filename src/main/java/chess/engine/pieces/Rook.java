@@ -10,14 +10,14 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-public class Bishop extends Piece {
-    private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-9, -7, 7, 9 };//offsets w.r.t current position
+public class Rook extends Piece{
 
-    Bishop (final int piecePosition, final Alliance pieceAlliance) {
+    private final static int[] CANDIDATE_MOVE_VECTOR_COORDINATES = {-8, -1, 1, 8 };//offsets w.r.t current position
+
+    Rook (final int piecePosition, final Alliance pieceAlliance) {
         super(piecePosition, pieceAlliance);
     }
 
-    @Override
     public Collection<Move> calculateLegalMoves(final Board board) {
 
         List<Move> legalMoves = new ArrayList<>();
@@ -27,7 +27,7 @@ public class Bishop extends Piece {
             while(BoardUtils.isValidTileCoordinate(candidateDestinationCoordinate)) {
 
                 if(isFirstColumnExclusion(candidateDestinationCoordinate, candidateCoordinateOffset) ||
-                    isEighthColumnExclusion(candidateDestinationCoordinate, candidateCoordinateOffset)) {
+                        isEighthColumnExclusion(candidateDestinationCoordinate, candidateCoordinateOffset)) {
                     break;
                 }
 
@@ -50,10 +50,10 @@ public class Bishop extends Piece {
         return null;
     }
     private static boolean isFirstColumnExclusion (final int currentPosition, final int candidateOffset) {
-        return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -9 || candidateOffset == 7 );
+        return BoardUtils.FIRST_COLUMN[currentPosition] && (candidateOffset == -1);
     }
     private static boolean isEighthColumnExclusion (final int currentPosition, final int candidateOffset) {
-        return BoardUtils.EIGHTH_COLUMN[currentPosition] && (candidateOffset == -7 || candidateOffset == 9 );
+        return BoardUtils.EIGHTH_COLUMN[currentPosition] && (candidateOffset == 1);
     }
 
 }
