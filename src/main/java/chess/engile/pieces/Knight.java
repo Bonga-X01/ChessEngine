@@ -4,6 +4,7 @@ import chess.Alliance;
 import chess.engine.board.Board;
 import chess.engine.board.BoardUtils;
 import chess.engine.board.Move;
+import chess.engine.board.Move.*;
 import chess.engine.board.Tile;
 import com.google.common.collect.ImmutableList;
 
@@ -34,14 +35,14 @@ public class Knight extends Piece{
                     continue;
                 }
                 final Tile candidateDestinationTile = board.getTile(candidateDestinationCoordinate);
-                if(!candidateDestinationTile.isTileOccupied()) {
-                    legalMoves.add(new Move());
+                if(!candidateDestinationTile.isTileOccupied()) {//MajorMove
+                    legalMoves.add(new MajorMove(board, this, candidateDestinationCoordinate));
                 } else {
                     final Piece pieceAtDestination = candidateDestinationTile.getPiece();
                     final Alliance pieceAlliance = pieceAtDestination.getPieceAlliance();
 
                     if(this.pieceAlliance != pieceAlliance){
-                        legalMoves.add(new Move());
+                        legalMoves.add(new AttackMove(board, this, candidateDestinationCoordinate, pieceAtDestination));
                     }
                 }
             }
