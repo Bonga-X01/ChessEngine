@@ -1,6 +1,6 @@
 package chess.engine.board;
 
-import chess.engile.pieces.Piece;
+import chess.engine.pieces.Piece;
 
 public class Move {
     final Board board;

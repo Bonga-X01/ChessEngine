@@ -1,4 +1,4 @@
-package chess.engile.pieces;
+package chess.engine.pieces;
 
 import chess.Alliance;
 import chess.engine.board.Board;
