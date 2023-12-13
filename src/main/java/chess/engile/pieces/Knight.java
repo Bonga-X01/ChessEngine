@@ -55,8 +55,8 @@ public class Knight extends Piece{
      * This method determines whether the current candidateOffset leads to a valid move provided that the Knight is in the
      * first column
      *
-     * @param currentPosition
-     * @param candidateOffset
+     * @param currentPosition - represents the current position of the Knight
+     * @param candidateOffset - represents the offset
      * @return true if the candidateOffset leads to an invalid move
      * @return false if the candidateOffset leads to a valid move
      */
